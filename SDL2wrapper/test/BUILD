@@ -80,6 +80,7 @@ cc_test(
         "@com_google_googletest//:gtest_main",
         "//libs:sdl2",
         "//SDL2wrapper:SDL2wrapper",
-    ]
+    ],
+    data = glob(["testdata/**"]),
 
 )
