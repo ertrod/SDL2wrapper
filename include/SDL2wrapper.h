@@ -18,4 +18,8 @@
 #include "SDL2wrapper/include/SDLImage.h"
 #endif
 
+#ifdef SDL2WRAPPER_FONT
+#include "SDL2wrapper/include/SDLTTF.h"
+#endif
+
 #endif

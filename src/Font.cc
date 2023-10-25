@@ -8,6 +8,7 @@
 
 #include "SDL2wrapper/include/Pointers.h"
 #include "SDL2wrapper/include/Exception.h"
+#include "SDL2wrapper/include/Surface.h"
 
 namespace sdl2
 {
@@ -265,5 +266,4 @@ Surface Font::RenderGlyph_Blended(Uint16 ch, SDL_Color fg) {
     return Surface(surface);
 }
 
-
-}
+} // sdl2
