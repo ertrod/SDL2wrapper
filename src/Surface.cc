@@ -234,6 +234,11 @@ Surface& Surface::FillRects(const Rect* rects, int count, Uint32 color)
     return *this;
 }
 
+Point Surface::Size() const
+{
+    return Point(surface_->w, surface_->h);
+}
+
 int Surface::Width() const
 {
     return surface_->w;

@@ -1,8 +1,6 @@
 #include "gtest/gtest.h"
 #include "libs/SDL2/include/SDL_main.h" 
 
-#define SDL2WRAPPER_FONT
-
 #include "SDL2wrapper/include/Exception.h"
 #include "SDL2wrapper/include/Font.h"
 #include "SDL2wrapper/include/SDLTTF.h"
@@ -18,10 +16,10 @@ TEST(SDL2wrapperFontTest, ComplexTest)
 		// Font style
 		EXPECT_EQ(font.Style(), TTF_STYLE_NORMAL);
 
-		font.SetStyle(TTF_STYLE_BOLD | TTF_STYLE_ITALIC | TTF_STYLE_UNDERLINE | TTF_STYLE_STRIKETHROUGH);
+		font.Style(TTF_STYLE_BOLD | TTF_STYLE_ITALIC | TTF_STYLE_UNDERLINE | TTF_STYLE_STRIKETHROUGH);
 		EXPECT_EQ(font.Style(), TTF_STYLE_BOLD | TTF_STYLE_ITALIC | TTF_STYLE_UNDERLINE | TTF_STYLE_STRIKETHROUGH);
 
-		font.SetStyle();
+		font.Style();
 		EXPECT_EQ(font.Style(), TTF_STYLE_NORMAL);
 	}
 
@@ -29,7 +27,7 @@ TEST(SDL2wrapperFontTest, ComplexTest)
 		// Outline
 		EXPECT_EQ(font.Outline(), 0);
 
-		font.SetOutline(2);
+		font.Outline(2);
 		EXPECT_EQ(font.Outline(), 2);
 
 		font.Outline(0);
@@ -49,37 +47,38 @@ TEST(SDL2wrapperFontTest, ComplexTest)
 
 	{
 		// Kerning
-		EXPECT_EQ(font.GetKerning(), true);
+        font.Kerning(true);
+		EXPECT_EQ(font.Kerning(), true);
 
-		font.SetKerning(false);
-		EXPECT_EQ(font.GetKerning(), false);
+		font.Kerning(false);
+		EXPECT_EQ(font.Kerning(), false);
 
-		font.SetKerning();
-		EXPECT_EQ(font.GetKerning(), true);
+		font.Kerning();
+		EXPECT_EQ(font.Kerning(), true);
 	}
 
 	{
 		// Metrics
-		EXPECT_TRUE(font.GetHeight() == 35 || font.GetHeight() == 36);
-		EXPECT_EQ(font.GetAscent(), 28);
-		EXPECT_EQ(font.GetDescent(), -7);
-		EXPECT_EQ(font.GetLineSkip(), 35);
+		EXPECT_TRUE(font.Height() == 35 || font.Height() == 36);
+		EXPECT_EQ(font.Ascent(), 28);
+		EXPECT_EQ(font.Descent(), -7);
+		EXPECT_EQ(font.LineSkip(), 35);
 	}
 
 	{
 		// Faces
-		EXPECT_EQ(font.GetNumFaces(), 1);
+		EXPECT_EQ(font.NumFaces(), 1);
 	}
 
 	{
 		// Fixed width
-		EXPECT_EQ(font.IsFixedWidth(), false);
+		EXPECT_EQ(font.IsMono(), false);
 	}
 
 	{
 		// Names
-		auto family = font.GetFamilyName();
-		auto style = font.GetStyleName();
+		auto family = font.FamilyName();
+		auto style = font.StyleName();
 
 		EXPECT_TRUE(family && *family == "Bitstream Vera Sans");
 		EXPECT_TRUE(style && *style == "Roman");
@@ -110,7 +109,7 @@ TEST(SDL2wrapperFontTest, ComplexTest)
 		// Why doesn't TTF_GlyphMetrics on non-existing glyph not return -1?!
 		//EXPECT_EXCEPTION(font.GetGlyphMetrics(u'л', minx, maxx, miny, maxy, advance), Exception);
 
-		EXPECT_NO_EXCEPTION(font.GetGlyphMetrics(u'A', minx, maxx, miny, maxy, advance));
+		EXPECT_NO_THROW(font.GlyphMetrics(u'A', minx, maxx, miny, maxy, advance));
 
 		EXPECT_EQ(minx, 0);
 		EXPECT_TRUE(maxx >= 20 && maxx <= 21);
@@ -118,28 +117,28 @@ TEST(SDL2wrapperFontTest, ComplexTest)
 		EXPECT_EQ(maxy, 22);
 		EXPECT_EQ(advance, 21);
 
-		EXPECT_TRUE(isAllowedARect(font.GetGlyphRect(u'A')));
-		EXPECT_EQ(font.GetGlyphAdvance(u'A'), 21);
+		EXPECT_TRUE(isAllowedARect(font.GlyphRect(u'A')));
+		EXPECT_EQ(font.GlyphAdvance(u'A'), 21);
 
 		// Text size
-		EXPECT_TRUE(isAllowedAADims(font.GetSizeText("AA")));
-		EXPECT_TRUE(isAllowedAADims(font.GetSizeUTF8(u8"AA")));
-		EXPECT_TRUE(isAllowedAADims(font.GetSizeUNICODE(u"AA")));
+		EXPECT_TRUE(isAllowedAADims(font.SizeOfText("AA")));
+		EXPECT_TRUE(isAllowedAADims(font.SizeOfUTF8(u8"AA")));
+		EXPECT_TRUE(isAllowedAADims(font.SizeOfUnicode(u"AA")));
 	}
 
 	{
 		// Rendering
 		// XXX: add real pixel color tests
-		EXPECT_TRUE(isAllowedAADims(font.RenderText_Solid("AA", SDL_Color{255, 255, 255, 255}).GetSize()));
-		EXPECT_TRUE(isAllowedAADims(font.RenderUTF8_Solid(u8"AA", SDL_Color{255, 255, 255, 255}).GetSize()));
-		EXPECT_TRUE(isAllowedAADims(font.RenderUNICODE_Solid(u"AA", SDL_Color{255, 255, 255, 255}).GetSize()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderText_Solid("AA", SDL_Color{255, 255, 255, 255}).Size()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderUTF8_Solid(u8"AA", SDL_Color{255, 255, 255, 255}).Size()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderUNICODE_Solid(u"AA", SDL_Color{255, 255, 255, 255}).Size()));
 
-		EXPECT_TRUE(isAllowedAADims(font.RenderText_Shaded("AA", SDL_Color{255, 255, 255, 255}, SDL_Color{0, 0, 0, 255}).GetSize()));
-		EXPECT_TRUE(isAllowedAADims(font.RenderUTF8_Shaded(u8"AA", SDL_Color{255, 255, 255, 255}, SDL_Color{0, 0, 0, 255}).GetSize()));
-		EXPECT_TRUE(isAllowedAADims(font.RenderUNICODE_Shaded(u"AA", SDL_Color{255, 255, 255, 255}, SDL_Color{0, 0, 0, 255}).GetSize()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderText_Shaded("AA", SDL_Color{255, 255, 255, 255}, SDL_Color{0, 0, 0, 255}).Size()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderUTF8_Shaded(u8"AA", SDL_Color{255, 255, 255, 255}, SDL_Color{0, 0, 0, 255}).Size()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderUNICODE_Shaded(u"AA", SDL_Color{255, 255, 255, 255}, SDL_Color{0, 0, 0, 255}).Size()));
 
-		EXPECT_TRUE(isAllowedAADims(font.RenderText_Blended("AA", SDL_Color{255, 255, 255, 255}).GetSize()));
-		EXPECT_TRUE(isAllowedAADims(font.RenderUTF8_Blended(u8"AA", SDL_Color{255, 255, 255, 255}).GetSize()));
-		EXPECT_TRUE(isAllowedAADims(font.RenderUNICODE_Blended(u"AA", SDL_Color{255, 255, 255, 255}).GetSize()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderText_Blended("AA", SDL_Color{255, 255, 255, 255}).Size()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderUTF8_Blended(u8"AA", SDL_Color{255, 255, 255, 255}).Size()));
+		EXPECT_TRUE(isAllowedAADims(font.RenderUNICODE_Blended(u"AA", SDL_Color{255, 255, 255, 255}).Size()));
 	}
 }

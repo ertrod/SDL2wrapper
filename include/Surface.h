@@ -99,6 +99,7 @@ public:
     Surface& FillRect(const std::optional<Rect>& rect, Uint32 color);
     Surface& FillRects(const Rect* rects, int count, Uint32 color);
 
+    Point Size() const;
     int Width() const;
     int Height() const;
 
