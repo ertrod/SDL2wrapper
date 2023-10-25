@@ -81,6 +81,15 @@ cc_test(
         "//libs:sdl2",
         "//SDL2wrapper:SDL2wrapper",
     ],
-    data = glob(["testdata/**"]),
-
+    data = ["testdata/crate.png"],
+)
+cc_test(
+    name = "sdl2wrapper-font-test",
+    srcs = ["sdl_font_test.cc"],
+    deps = [
+        "@com_google_googletest//:gtest_main",
+        "//libs:sdl2",
+        "//SDL2wrapper:SDL2wrapper",
+    ]
+    data = ["testdata/Vera.ttf"]
 )
