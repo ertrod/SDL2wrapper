@@ -5,7 +5,6 @@
 #include <vector>
 #include <optional>
 
-
 #include "SDL2wrapper/include/Pointers.h"
 #include "SDL2wrapper/include/Exception.h"
 #include "SDL2wrapper/include/Surface.h"

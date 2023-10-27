@@ -19,6 +19,7 @@
 #endif
 
 #ifdef SDL2WRAPPER_FONT
+#include "SDL2wrapper/include/Font.h"
 #include "SDL2wrapper/include/SDLTTF.h"
 #endif
 
