@@ -74,7 +74,7 @@ Texture& Texture::Update(const std::optional<Rect>& rect, Surface& surface)
 
 Texture& Texture::Update(const std::optional<Rect>& rect, Surface&& surface)
 {
-    Rect real_rect = rect == std::nullopt ? Rect(0, 0, Width(), Height()) : *rect;
+    Rect real_rect = (rect == std::nullopt) ? Rect(0, 0, Width(), Height()) : *rect;
 
     real_rect.w = std::min(real_rect.w, surface.Width());
     real_rect.h = std::min(real_rect.h, surface.Height());
@@ -88,6 +88,9 @@ Texture& Texture::Update(const std::optional<Rect>& rect, Surface&& surface)
     {
         Surface converted = surface.Convert(Format());
         Surface::LockHandle lock = converted.Lock();
+      
+        void* p = lock.Pixels();
+        int i = lock.Pitch();
 
         return Update(real_rect, lock.Pixels(), lock.Pitch());
     }

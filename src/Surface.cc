@@ -111,7 +111,7 @@ void Surface::BlitScaled(const std::optional<Rect>& srcrect, Surface& dst, const
 
 Surface::LockHandle Surface::Lock()
 {
-    return LockHandle(*this);
+    return LockHandle(this);
 }
 
 Rect Surface::ClipRect() const

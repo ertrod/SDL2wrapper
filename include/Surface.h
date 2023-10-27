@@ -17,31 +17,28 @@ namespace sdl2
 class Surface 
 {
 public:
-    class LockHandle
-    {
+    class LockHandle {
         friend class Surface;
     private:
-        
-        explicit LockHandle(Surface& surface);
+        explicit LockHandle(Surface* surface);
 
     public:
         LockHandle();
         ~LockHandle();
 
         LockHandle(LockHandle&& other) noexcept;
-
         LockHandle& operator=(LockHandle&& other) noexcept;
 
         LockHandle(const LockHandle& other) = delete;
-        LockHandle& operator=(const LockHandle& other) = delete;
 
         void* Pixels() const;
+
         int Pitch() const;
+
         const SDL_PixelFormat& Format() const;
-
+    
     private:
-        SurfaceSharedPtr surface_;
-
+        Surface* surface_;
     };
 
     explicit Surface(SDL_Surface* surface);
