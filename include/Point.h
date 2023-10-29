@@ -23,6 +23,7 @@ public:
     Point(const Point&) noexcept = default;
     Point(Point&&) noexcept = default;
 
+    Point& operator=(Point&) noexcept = default;
     Point& operator=(Point&&) noexcept = default;
 
     constexpr Point operator-() const 
