@@ -16,7 +16,7 @@ Texture::LockHandle::LockHandle(Texture* texture, const std::optional<Rect>& rec
     texture_(texture)
 {
     if (0 != SDL_LockTexture(
-        texture->Get(), 
+        texture_->Get(), 
         rect == std::nullopt ? nullptr : &*rect,
         &pixels_, &pitch_
     ))
