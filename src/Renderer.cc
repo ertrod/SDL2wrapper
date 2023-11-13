@@ -105,8 +105,8 @@ Renderer& Renderer::Copy(Texture& texture, const std::optional<Rect>& srcrect, c
 Renderer& Renderer::Copy(Texture& texture, const std::optional<Rect>& srcrect, const std::optional<Rect>& dstrect, double angle, const std::optional<Point>& center, int flip)
 {
     int result = SDL_RenderCopyEx(renderer_.get(), texture.Get(),
-        srcrect == std::nullopt ? nullptr : &* srcrect,
-        dstrect == std::nullopt ? nullptr : &* dstrect,
+        srcrect == std::nullopt ? nullptr : &*srcrect,
+        dstrect == std::nullopt ? nullptr : &*dstrect,
         angle,
         center == std::nullopt ? nullptr : &*center, 
         static_cast<SDL_RendererFlip>(flip)
