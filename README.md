@@ -1,6 +1,11 @@
 # SDL2wrapper
+
 C++ bindings/wrapper for SDL2
 
 This is fork of libSDL2pp, with some changes in interface and realization.
 
 original project: https://github.com/libSDL2pp/libSDL2pp
+
+
+
+This project is build using [Bazel](https://github.com/bazelbuild/bazel).
