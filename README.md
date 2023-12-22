@@ -8,4 +8,4 @@ original project: https://github.com/libSDL2pp/libSDL2pp
 
 
 
-This project is build using [Bazel](https://github.com/bazelbuild/bazel).
+This project can be used with Bazel [Bazel](https://github.com/bazelbuild/bazel).
