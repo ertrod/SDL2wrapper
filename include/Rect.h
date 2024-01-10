@@ -3,7 +3,7 @@
 
 #include <optional>
 
-#include "libs/SDL2/include/SDL_rect.h"
+#include "SDL/SDL2/include/SDL_rect.h"
 #include "SDL2wrapper/include/Point.h"
 
 namespace sdl2

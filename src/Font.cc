@@ -1,4 +1,4 @@
-#include "libs/SDL2_ttf/include/SDL_ttf.h"
+#include "SDL/SDL2_ttf/include/SDL_ttf.h"
 #include "SDL2wrapper/include/Font.h"
 
 #include <cassert>

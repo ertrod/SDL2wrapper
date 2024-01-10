@@ -1,7 +1,7 @@
 #ifndef SDL2WRAPPER_SDL_H_
 #define SDL2WRAPPER_SDL_H_
 
-#include "libs/SDL2/include/SDL_stdinc.h"
+#include "SDL/SDL2/include/SDL_stdinc.h"
 
 namespace sdl2
 {

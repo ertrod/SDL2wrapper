@@ -2,7 +2,7 @@
 
 #include <utility>
 
-#include "libs/SDL2/include/SDL_surface.h"
+#include "SDL/SDL2/include/SDL_surface.h"
 
 #include "SDL2wrapper/include/Exception.h"
 

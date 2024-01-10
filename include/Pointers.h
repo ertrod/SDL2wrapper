@@ -3,10 +3,10 @@
 
 #include <memory>
 
-#include "libs/SDL2/include/SDL.h"
+#include "SDL/SDL2/include/SDL.h"
 
 #ifdef SDL2WRAPPER_FONT
-    #include "libs/SDL2_ttf/include/SDL_ttf.h"
+    #include "SDL/SDL2_ttf/include/SDL_ttf.h"
 #endif
 
 namespace sdl2

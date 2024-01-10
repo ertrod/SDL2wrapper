@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "libs/SDL2/include/SDL_rect.h"
+#include "SDL/SDL2/include/SDL_rect.h"
 
 namespace sdl2
 {
