@@ -5,7 +5,7 @@ cc_library(
     hdrs = glob(["include/*.h"]),
     srcs = glob(["src/*.cc"]),
     deps = [
-        "//libs:sdl2"
+        "//SDL2:sdl2"
     ],
     defines = [
         "SDL2WRAPPER_IMAGE",
