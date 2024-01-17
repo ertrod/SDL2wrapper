@@ -5,8 +5,8 @@
 #include <optional>
 #include <utility>
 
-#include "SDL/SDL2/include/SDL_surface.h"
-#include "SDL/SDL2_image/include/SDL_image.h"
+#include "SDL2/include/SDL_surface.h"
+#include "SDL2_image/include/SDL_image.h"
 
 #include "SDL2wrapper/include/Exception.h"
 

@@ -1,6 +1,6 @@
 #include "SDL2wrapper/include/Texture.h"
 
-#include "SDL/SDL2/include/SDL_render.h"
+#include "SDL2/include/SDL_render.h"
 
 #include "SDL2wrapper/include/Rect.h"
 #include "SDL2wrapper/include/Exception.h"

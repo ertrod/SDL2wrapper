@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "SDL/SDL2/include/SDL_pixels.h"
+#include "SDL2/include/SDL.h"
 
 namespace sdl2
 {

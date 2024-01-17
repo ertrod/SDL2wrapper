@@ -5,11 +5,11 @@
 #include <cassert>
 #include <utility>
 
-#include "SDL/SDL2/include/SDL_stdinc.h"
-#include "SDL/SDL2/include/SDL_blendmode.h"
+#include "SDL2/include/SDL_stdinc.h"
+#include "SDL2/include/SDL_blendmode.h"
 
 #ifdef SDL2WRAPPER_IMAGE
-#include "SDL/SDL2_image/include/SDL_image.h"
+#include "SDL2_image/include/SDL_image.h"
 #endif
 
 #include "SDL2wrapper/include/Pointers.h"

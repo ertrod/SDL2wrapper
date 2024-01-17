@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-#include "SDL/SDL2_ttf/include/SDL_ttf.h"
+#include "SDL2_ttf/include/SDL_ttf.h"
 
 #include "SDL2wrapper/include/Pointers.h"
 #include "SDL2wrapper/include/Point.h"

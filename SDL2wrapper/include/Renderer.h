@@ -3,8 +3,8 @@
 
 #include <optional>
 
-#include "SDL/SDL2/include/SDL_stdinc.h"
-#include "SDL/SDL2/include/SDL_blendmode.h"
+#include "SDL2/include/SDL_stdinc.h"
+#include "SDL2/include/SDL_blendmode.h"
 
 #include "SDL2wrapper/include/Pointers.h"
 #include "SDL2wrapper/include/Point.h"
