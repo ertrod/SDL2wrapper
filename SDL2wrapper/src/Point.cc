@@ -1,4 +1,4 @@
-#include "SDl2wrapper/include/Point.h"
+#include "SDL2wrapper/include/Point.h"
 
 #include <iostream>
 

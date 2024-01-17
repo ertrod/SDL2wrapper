@@ -1,6 +1,6 @@
 #include "SDL2wrapper/include/SDL.h"
 
-#include "libs/SDL2/include/SDL.h"
+#include "SDL2/include/SDL.h"
 
 #include "SDL2wrapper/include/Exception.h"
 

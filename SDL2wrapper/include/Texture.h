@@ -4,9 +4,9 @@
 #include <string>
 #include <optional>
 
-#include "libs/SDL2/include/SDL_stdinc.h"
-#include "libs/SDL2/include/SDL_blendmode.h"
-#include "libs/SDL2/include/SDL_render.h"
+#include "SDL2/include/SDL_stdinc.h"
+#include "SDL2/include/SDL_blendmode.h"
+#include "SDL2/include/SDL_render.h"
 
 #include "SDL2wrapper/include/Pointers.h"
 #include "SDL2wrapper/include/Color.h"

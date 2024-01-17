@@ -1,9 +1,9 @@
 #ifndef SDL2WRAPPER_WINDOW_H_
 #define SDL2WRAPPER_WINDOW_H_
 
-#include "libs/SDL2/include/SDL_version.h"
-#include "libs/SDL2/include/SDL_stdinc.h"
-#include "libs/SDL2/include/SDL_video.h"
+#include "SDL2/include/SDL_version.h"
+#include "SDL2/include/SDL_stdinc.h"
+#include "SDL2/include/SDL_video.h"
 
 #include "SDL2wrapper/include/Pointers.h"
 #include "SDL2wrapper/include/Surface.h"

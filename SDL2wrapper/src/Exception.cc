@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-#include "libs/SDL2/include/SDL_error.h"
+#include "SDL2/include/SDL.h"
 
 namespace sdl2
 {

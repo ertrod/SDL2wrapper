@@ -3,6 +3,7 @@
 #include <cassert>
 #include <utility>
 
+
 #include "SDL2wrapper/include/Pointers.h"
 #include "SDL2wrapper/include/Rect.h"
 #include "SDL2wrapper/include/Exception.h"
